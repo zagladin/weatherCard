@@ -15,7 +15,7 @@ export const getWeather = async (lat, long) => {
 };
 
 export const getCityName = async (lat, long) => {
-  const url = 'http://api.openweathermap.org/geo/1.0/reverse';
+  const url = 'https://api.openweathermap.org/geo/1.0/reverse';
   const endpoint = `${url}?lat=${lat}&lon=${long}&limit=1&appId=${APIKey}`;
 
   try {

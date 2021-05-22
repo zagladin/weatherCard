@@ -53,7 +53,7 @@ export default function UseWeather() {
     setCurrentWeather(prevState => (
         {
           ...prevState,
-          accuracy,
+          accuracy: accuracy.toFixed(2),
         }));
 
     setLoading(true);
@@ -74,9 +74,6 @@ export default function UseWeather() {
 
       const sunriseValue = timeStampConverter(responseData.sunrise);
       const sunsetValue = timeStampConverter(responseData.sunset);
-
-      console.log('sunrise , ', sunriseValue);
-      console.log('sunset , ', sunsetValue);
 
 
       setCurrentWeather(prevState => (
