@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/weatherCard/static/css/main.b9015fff.chunk.css",
+    "main.js": "/weatherCard/static/js/main.914e9c55.chunk.js",
+    "main.js.map": "/weatherCard/static/js/main.914e9c55.chunk.js.map",
+    "runtime-main.js": "/weatherCard/static/js/runtime-main.0405df61.js",
+    "runtime-main.js.map": "/weatherCard/static/js/runtime-main.0405df61.js.map",
+    "static/js/2.12cde930.chunk.js": "/weatherCard/static/js/2.12cde930.chunk.js",
+    "static/js/2.12cde930.chunk.js.map": "/weatherCard/static/js/2.12cde930.chunk.js.map",
+    "index.html": "/weatherCard/index.html",
+    "precache-manifest.b4cf1da333cd87ad604258b88edff5d8.js": "/weatherCard/precache-manifest.b4cf1da333cd87ad604258b88edff5d8.js",
+    "service-worker.js": "/weatherCard/service-worker.js",
+    "static/css/main.b9015fff.chunk.css.map": "/weatherCard/static/css/main.b9015fff.chunk.css.map",
+    "static/js/2.12cde930.chunk.js.LICENSE.txt": "/weatherCard/static/js/2.12cde930.chunk.js.LICENSE.txt",
+    "static/media/Bars.svg": "/weatherCard/static/media/Bars.2fc9d01e.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0405df61.js",
+    "static/js/2.12cde930.chunk.js",
+    "static/css/main.b9015fff.chunk.css",
+    "static/js/main.914e9c55.chunk.js"
+  ]
+}
