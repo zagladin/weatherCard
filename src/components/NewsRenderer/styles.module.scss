@@ -1,0 +1,42 @@
+.wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  margin-top: 12px;
+  font-family: 'Sriracha', cursive;
+  height: 250px;
+
+  .article {
+    flex: 0 0 auto;
+    width: 100%;
+    max-height: 250px;
+  }
+}
+
+.content {
+  display: flex;
+  white-space: normal;
+  padding: 6px;
+}
+
+.description {
+  margin-left: 6px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.image {
+  width: 30%;
+  height: 30%;
+  margin-right: 6px;
+}
+
+.title {
+  font-size: 17px;
+}
+
+.link {
+  font-size: 14px;
+  margin-top: 6px;
+}

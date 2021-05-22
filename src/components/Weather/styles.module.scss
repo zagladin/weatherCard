@@ -1,0 +1,138 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #6e97ab85, #019de4);
+  width: 100%;
+  max-width: 320px;
+  min-height: 540px;
+  box-shadow: 4px 8px 5px lightgrey;
+  font-size: 24px;
+  color: #fffefe;
+  padding: 24px;
+  font-family: 'Comfortaa', cursive;
+  margin: 10% auto 0 auto;
+  border-radius: 10px;
+}
+
+.temperature {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+
+  .tempValue {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 69px;
+    position: relative;
+
+    &:after {
+      content: '°';
+      font-size: 16px;
+      vertical-align: text-top;
+      position: absolute;
+      top: 10px;
+    }
+  }
+
+  .tempText {
+    font-size: 10px;
+    margin: 0 3px 0 12px;
+  }
+
+  span {
+    font-size: 70px;
+  }
+}
+
+.city {
+  font-family: 'Bebas Neue', cursive;
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 14px;
+
+  span {
+    font-size: 24px;
+  }
+}
+
+.sun {
+  display: flex;
+  justify-content: center;
+
+}
+
+.iconAndState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.clouds {
+  font-size: 30px;
+
+  &:last-child {
+    font-size: 38px;
+  }
+
+  &:not(:last-child) {
+    &:after {
+      content: '|';
+      font-size: 24px;
+      margin: 0 12px;
+    }
+  }
+}
+
+.icon {
+  margin-right: 12px;
+
+}
+
+.optional {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  margin-top: 14px;
+  font-family: 'Comfortaa', cursive;
+
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
+.value {
+  display: flex;
+  align-items: center;
+
+  svg {
+    margin-right: 6px;
+  }
+
+  span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+  }
+
+  &:not(:last-child) {
+    &:after {
+      content: '|';
+      font-size: 24px;
+      margin: 0 12px;
+    }
+  }
+}
+
+.hourlyForecast {
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding: 12px 0;
+  height: 150px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+
+

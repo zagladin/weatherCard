@@ -1,0 +1,12 @@
+.selector {
+  width: 100px;
+
+  &:hover {
+    color: black;
+    cursor: pointer;
+  }
+}
+
+.active {
+  text-decoration: underline;
+}

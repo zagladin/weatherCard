@@ -1,0 +1,72 @@
+.hourlyWeatherWrapper {
+  padding: 8px 0;
+  min-width: 130px;
+  text-align: center;
+  font-size: 14px;
+  border-bottom: 1px solid #545454;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #545454;
+  margin: 0 4px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.temps {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 6px;
+
+  div {
+    &:last-child {
+      &:before {
+        content: '/';
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+.temperature {
+  font-size: 16px;
+  position: relative;
+  margin: 0 6px;
+
+  &:after {
+    content: '°';
+    font-size: 12px;
+    vertical-align: text-top;
+    position: absolute;
+    top: 0;
+  }
+}
+
+.uvindex {
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.pops {
+  display: flex;
+  align-items: center;
+  height: 20%;
+  font-style: italic;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.wind {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+
+  svg {
+    margin-right: 6px;
+  }
+}
+
+.dateTime {
+  font-weight: bold;
+}
