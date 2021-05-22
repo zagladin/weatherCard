@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "601d569179f693fc14d05081034051ad",
+    "revision": "1d1d532b28811b57e49aeaa0b542586b",
     "url": "/weatherCard/index.html"
   },
   {
-    "revision": "194e2e1799c827b84575",
-    "url": "/weatherCard/static/css/main.b9015fff.chunk.css"
+    "revision": "fca9207498ee15b09bd9",
+    "url": "/weatherCard/static/css/main.91755bc2.chunk.css"
   },
   {
-    "revision": "0b87af84b355922e8947",
-    "url": "/weatherCard/static/js/2.12cde930.chunk.js"
+    "revision": "34daaa9aa77c1923b572",
+    "url": "/weatherCard/static/js/2.5598f27f.chunk.js"
   },
   {
     "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "/weatherCard/static/js/2.12cde930.chunk.js.LICENSE.txt"
+    "url": "/weatherCard/static/js/2.5598f27f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "194e2e1799c827b84575",
-    "url": "/weatherCard/static/js/main.cdf1a8ff.chunk.js"
+    "revision": "fca9207498ee15b09bd9",
+    "url": "/weatherCard/static/js/main.a817455d.chunk.js"
   },
   {
     "revision": "e480e1fb51996451ee8f",
