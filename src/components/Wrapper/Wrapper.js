@@ -13,11 +13,7 @@ const Wrapper = () => {
   return (
       <div className={styles.background}
            style={{backgroundColor: background}}>
-        <div className={styles.container}>
-          <Weather/>
-          {/*<News/>*/}
-        </div>
-        {/*<Palette changeColor={(color) => setBackground(color)}/>*/}
+        <Weather/>
       </div>
   );
 };

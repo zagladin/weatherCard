@@ -31,7 +31,7 @@ export default function UseWeather() {
     if (navigator.geolocation) {
       const options = {
         maximumAge: 7200000,
-        enableHighAccuracy: true,
+        enableHighAccuracy: false,
       };
       navigator.geolocation.getCurrentPosition(handleLocation, errorHandler,
           options);

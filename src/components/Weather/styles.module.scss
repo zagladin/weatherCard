@@ -1,11 +1,11 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, #6e97ab85, #019de4);
+  background: linear-gradient(180deg, #6e97ab85, #08c54b);
   width: 100%;
   max-width: 320px;
   min-height: 540px;
-  box-shadow: 4px 8px 5px lightgrey;
+  box-shadow: 4px 8px 5px #d4c6c6;
   font-size: 24px;
   color: #fffefe;
   padding: 24px;
@@ -127,7 +127,7 @@
   overflow-x: scroll;
   overflow-y: hidden;
   padding: 12px 0;
-  height: 150px;
+  height: 100%;
 
   &::-webkit-scrollbar {
     display: none;

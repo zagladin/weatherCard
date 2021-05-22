@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import HourlyWeatherCard from '../HourlyWeatherCard/HourlyWeatherCard';
 
 const HourlyForecastRenderer = ({forecast}) =>
@@ -6,7 +6,7 @@ const HourlyForecastRenderer = ({forecast}) =>
       const iconUrl = `http://openweathermap.org/img/wn/${forecast.weather[0].icon}.png`;
 
       return (
-          <Fragment key={forecast.dt}>
+          <div key={forecast.dt}>
             <HourlyWeatherCard dateTime={forecast.dt}
                                temperature={forecast.temp.toFixed(1)}
                                feelsTemp={forecast.feels_like.toFixed(1)}
@@ -14,7 +14,7 @@ const HourlyForecastRenderer = ({forecast}) =>
                                wind={forecast.wind_speed}
                                icon={iconUrl}
                                uvindex={forecast.uvi}/>
-          </Fragment>
+          </div>
       );
     });
 
