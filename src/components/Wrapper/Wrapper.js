@@ -2,10 +2,8 @@ import React, {useState, useEffect} from 'react';
 
 import styles from './Wrapper.module.scss';
 
-import News from '../News/News';
 import Palette from '../Palette/index';
 import Weather from '../Weather';
-import useWeather from '../../hooks/useWeather';
 
 const Wrapper = () => {
 
