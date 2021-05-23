@@ -95,8 +95,8 @@ const Palette = ({changeColor}) => {
         {/*          👁️*/}
         {/*      </span>*/}
         <span role="img"
-              aria-label="fullscreen"
-              title="Fullscreen"
+              aria-label="Refresh data"
+              title="Refresh data"
               onClick={getLocation}
         >
                     🔄
