@@ -13,7 +13,7 @@ export const getWeather = async (lat, long) => {
       return weatherData.data;
     }
   } catch (error) {
-    console.warn('Erro while getting weahter data ', error);
+    console.warn('Error while getting weather data ', error);
   }
 };
 

@@ -68,7 +68,7 @@ export default function useWeather() {
       const responseData = res.current;
 
       const iconTag = responseData.weather[0].icon;
-      const iconUrl = `http://openweathermap.org/img/wn/${iconTag}.png`;
+      const iconUrl = `https://openweathermap.org/img/wn/${iconTag}.png`;
       const pressureToMmHG = responseData.pressure * 0.75;
       const popsValue = responseData.weather[0].main;
 
