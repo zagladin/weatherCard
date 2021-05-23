@@ -7,11 +7,14 @@ export const getWeather = async (lat, long) => {
   let endpoint =
       `${url}?lat=${lat}&lon=${long}&exclude=minutely,daily,alerts&units=metric&appid=${APIKey}`;
 
-  return new Promise((resolve, reject) => {
-    axios.get(endpoint)
-    .then(response => resolve(response.data))
-    .catch(error => reject(error));
-  });
+  try {
+    const weatherData = await axios.get(endpoint);
+    if (weatherData) {
+      return weatherData.data;
+    }
+  } catch (error) {
+    console.warn('Erro while getting weahter data ', error);
+  }
 };
 
 export const getCityName = async (lat, long) => {

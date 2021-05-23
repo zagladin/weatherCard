@@ -1,8 +1,8 @@
-import {useCallback, useEffect, useState} from 'react';
+import {useState} from 'react';
 import {getCityName, getWeather} from '../api/api';
-import {timeStampConverter, timeStampToHours} from '../helpers/helper';
+import {timeStampConverter} from '../helpers/helper';
 
-export default function UseWeather() {
+export default function useWeather() {
   const [loading, setLoading] = useState(false);
 
   const [cityName, setCityName] = useState('');
@@ -10,7 +10,7 @@ export default function UseWeather() {
     temperature: '',
     humidity: '',
     pressure: '',
-    clouds: '',
+    pops: '',
     accuracy: '',
     icon: '',
     UVI: '',
@@ -18,21 +18,34 @@ export default function UseWeather() {
     windAngle: '',
     feelsLike: '',
     sunrise: '',
-    sunset: ''
+    sunset: '',
   });
 
   const [hourlyWeather, setHourlyWeather] = useState([]);
 
-  useEffect(() => {
-    getLocation();
-  }, []);
-
   const getLocation = () => {
     if (navigator.geolocation) {
       const options = {
-        maximumAge: 7200000,
-        enableHighAccuracy: false,
+        maximumAge: 10 * 60 * 1000,
+        enableHighAccuracy: true,
       };
+
+      const handleLocation = (position) => {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        const accuracy = position.coords.accuracy;
+
+        weatherProcessing(latitude, longitude, accuracy);
+      };
+
+      const errorHandler = (err) => {
+        if (err.code === 1) {
+          alert('Error: Access to geolocation is denied!');
+        } else if (err.code === 2) {
+          alert('Error: Position is unavailable!');
+        }
+      };
+
       navigator.geolocation.getCurrentPosition(handleLocation, errorHandler,
           options);
     } else {
@@ -40,41 +53,27 @@ export default function UseWeather() {
     }
   };
 
-  const handleLocation = (position) => {
-    const latitude = position.coords.latitude;
-    const longitude = position.coords.longitude;
-    const accuracy = position.coords.accuracy;
-
-    weatherProcessing(latitude, longitude, accuracy);
-  };
-
   const weatherProcessing = (latitude, longitude, accuracy) => {
 
-    setCurrentWeather(prevState => (
-        {
-          ...prevState,
-          accuracy: accuracy.toFixed(2),
-        }));
+    setCurrentWeather(
+        prevState => ({...prevState, accuracy: accuracy.toFixed(2)}));
 
     setLoading(true);
-
 
     getCityName(latitude, longitude)
     .then(res => setCityName(res[0].name))
     .catch(err => console.warn('Cannot get location info! ', err));
 
-    getWeather(latitude, longitude)
-    .then(res => {
+    getWeather(latitude, longitude).then(res => {
       const responseData = res.current;
 
       const iconTag = responseData.weather[0].icon;
       const iconUrl = `http://openweathermap.org/img/wn/${iconTag}.png`;
       const pressureToMmHG = responseData.pressure * 0.75;
-      const cloudsValue = responseData.weather[0].main;
+      const popsValue = responseData.weather[0].main;
 
       const sunriseValue = timeStampConverter(responseData.sunrise);
       const sunsetValue = timeStampConverter(responseData.sunset);
-
 
       setCurrentWeather(prevState => (
           {
@@ -84,26 +83,16 @@ export default function UseWeather() {
             feelsLike: responseData.feels_like.toFixed(1),
             humidity: responseData.humidity,
             pressure: pressureToMmHG,
-            clouds: cloudsValue,
+            pops: popsValue,
             wind: responseData.wind_speed,
             windAngle: responseData.wind_deg,
             icon: iconUrl,
             sunrise: sunriseValue,
-            sunset: sunsetValue
+            sunset: sunsetValue,
           }));
 
-      setHourlyWeather(res.hourly.slice(0, 25 - timeStampToHours(responseData.dt)));
-    })
-    .catch(error => console.error(error))
-    .finally(() => setLoading(false));
-  }
-
-  const errorHandler = (err) => {
-    if (err.code === 1) {
-      alert('Error: Access to geolocation is denied!');
-    } else if (err.code === 2) {
-      alert('Error: Position is unavailable!');
-    }
+      setHourlyWeather(res.hourly.slice(0, 12));
+    }).catch(error => console.error(error)).finally(() => setLoading(false));
   };
 
   return {
@@ -111,6 +100,6 @@ export default function UseWeather() {
     hourlyWeather,
     loading,
     cityName,
-    getLocation
+    getLocation,
   };
 };

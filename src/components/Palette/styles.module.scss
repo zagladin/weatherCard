@@ -2,8 +2,8 @@
   width: 50px;
   position: absolute;
   display: flex;
-  top: calc(99% - 30px);
-  left: calc(97% - 40px);
+  bottom: calc(1% + 20px);
+  right: calc(1% + 20px);
 
   span {
     margin: 5px;
@@ -11,10 +11,9 @@
     cursor: pointer;
   }
 
-  @media (max-width: 810px) {
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
+  @media (max-width: 850px) {
+    bottom: calc(1% + 20px);
+    right: calc(1% + 20px);
   }
 }
 
@@ -49,6 +48,10 @@
       width: 20px;
       height: 20px;
       background-color: gray;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }

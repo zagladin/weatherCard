@@ -18,4 +18,4 @@ const HourlyForecastRenderer = ({forecast}) =>
       );
     });
 
-export default HourlyForecastRenderer;
+export default React.memo(HourlyForecastRenderer);
