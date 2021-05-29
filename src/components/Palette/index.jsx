@@ -68,7 +68,7 @@ const Palette = ({changeColor}) => {
   //     }
   // };
 
-  const {getLocation} = useWeather();
+  const { getLocation } = useWeather();
 
   const togglePalette = () => setShowpalette(prevState => !prevState);
 
