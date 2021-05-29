@@ -42,7 +42,8 @@ const Weather = () => {
   const cx = className.bind(styles);
 
   const dayTime = 21 > dt > 9;
-  const nightTime = dt > 21;
+  const nightTime = dt > 21 || 9 > dt > 0;
+
 
   const weatherCardStyles = cx({
     'imageWeather': true,
