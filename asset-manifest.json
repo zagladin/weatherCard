@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/weatherCard/static/css/main.ab498c11.chunk.css",
-    "main.js": "/weatherCard/static/js/main.3d3e9a20.chunk.js",
-    "main.js.map": "/weatherCard/static/js/main.3d3e9a20.chunk.js.map",
+    "main.js": "/weatherCard/static/js/main.89e7cbe2.chunk.js",
+    "main.js.map": "/weatherCard/static/js/main.89e7cbe2.chunk.js.map",
     "runtime-main.js": "/weatherCard/static/js/runtime-main.0405df61.js",
     "runtime-main.js.map": "/weatherCard/static/js/runtime-main.0405df61.js.map",
     "static/js/2.76b126af.chunk.js": "/weatherCard/static/js/2.76b126af.chunk.js",
     "static/js/2.76b126af.chunk.js.map": "/weatherCard/static/js/2.76b126af.chunk.js.map",
     "index.html": "/weatherCard/index.html",
-    "precache-manifest.33590eb808d0732050ec78d8562f1987.js": "/weatherCard/precache-manifest.33590eb808d0732050ec78d8562f1987.js",
+    "precache-manifest.165eebd998e8c518374890ac6563c577.js": "/weatherCard/precache-manifest.165eebd998e8c518374890ac6563c577.js",
     "service-worker.js": "/weatherCard/service-worker.js",
     "static/css/main.ab498c11.chunk.css.map": "/weatherCard/static/css/main.ab498c11.chunk.css.map",
     "static/js/2.76b126af.chunk.js.LICENSE.txt": "/weatherCard/static/js/2.76b126af.chunk.js.LICENSE.txt",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.0405df61.js",
     "static/js/2.76b126af.chunk.js",
     "static/css/main.ab498c11.chunk.css",
-    "static/js/main.3d3e9a20.chunk.js"
+    "static/js/main.89e7cbe2.chunk.js"
   ]
 }
