@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9fe2295ee8a1ed65b67d0087974eb00f",
+    "revision": "4fa559749a1b6c355be0ab0779c97aca",
     "url": "/weatherCard/index.html"
   },
   {
-    "revision": "0a2070c8a1992743f85f",
-    "url": "/weatherCard/static/css/main.ab498c11.chunk.css"
+    "revision": "110195f0230f0e7ed82a",
+    "url": "/weatherCard/static/css/main.1fa70b28.chunk.css"
   },
   {
     "revision": "fa9d2f3ef06b1a9f7d2a",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/weatherCard/static/js/2.76b126af.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0a2070c8a1992743f85f",
-    "url": "/weatherCard/static/js/main.89e7cbe2.chunk.js"
+    "revision": "110195f0230f0e7ed82a",
+    "url": "/weatherCard/static/js/main.eacb6480.chunk.js"
   },
   {
     "revision": "e480e1fb51996451ee8f",
@@ -29,7 +29,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "f2cdd4f78c62440fd5daf56e839f3d1e",
-    "url": "/weatherCard/static/media/clear.f2cdd4f7.webp"
+    "url": "/weatherCard/static/media/clearDay.f2cdd4f7.webp"
+  },
+  {
+    "revision": "126baeff76f5a0d0986aa0bf2d2ac8c0",
+    "url": "/weatherCard/static/media/clearNight.126baeff.webp"
   },
   {
     "revision": "0bb4aa89e42b472df39293e4d006e5cf",
