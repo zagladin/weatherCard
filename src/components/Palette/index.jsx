@@ -68,7 +68,7 @@ const Palette = ({changeColor}) => {
   //     }
   // };
 
-  const { getLocation } = useWeather();
+  // const {getLocation} = useWeather();
 
   const togglePalette = () => setShowpalette(prevState => !prevState);
 
@@ -94,13 +94,13 @@ const Palette = ({changeColor}) => {
         {/*      onClick={toggleFullScreen}>*/}
         {/*          👁️*/}
         {/*      </span>*/}
-        <span role="img"
-              aria-label="Refresh data"
-              title="Refresh data"
-              onClick={getLocation}
-        >
-                    🔄
-                </span>
+        {/*<span role="img"*/}
+        {/*      aria-label="Refresh data"*/}
+        {/*      title="Refresh data"*/}
+        {/*      onClick={getLocation}*/}
+        {/*>*/}
+        {/*    🔄*/}
+        {/*</span>*/}
         <div className={showPalette ?
             `${styles.palette} ${styles.visible}` :
             `${styles.palette}`} id="palette">
