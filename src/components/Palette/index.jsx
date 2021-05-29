@@ -32,7 +32,7 @@ const Palette = ({changeColor}) => {
     '#BC986A',
     '#FBEEC1',
     '#379683',
-    '#5CDB95',
+    '#3D5547',
     '#3FEEE6',
     '#97CAEF',
     '#5CDB95',
