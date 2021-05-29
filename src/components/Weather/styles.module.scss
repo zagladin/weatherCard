@@ -174,9 +174,15 @@
     background-image: url(../../assets/images/clouds.webp);
   }
 }
-.clear {
+.clearDay {
   &:before {
-    background-image: url(../../assets/images/clear.webp);
+    background-image: url(../../assets/images/clearDay.webp);
+  }
+}
+
+.clearNight {
+  &:before {
+    background-image: url(../../assets/images/clearNight.webp);
   }
 }
 

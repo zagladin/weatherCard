@@ -22,6 +22,7 @@ const Weather = () => {
     getLocation,
     hourlyWeather,
     currentWeather: {
+      dt,
       accuracy,
       feelsLike,
       icon,
@@ -40,10 +41,14 @@ const Weather = () => {
 
   const cx = className.bind(styles);
 
+  const dayTime = 21 > dt > 9;
+  const nightTime = dt > 21;
+
   const weatherCardStyles = cx({
     'imageWeather': true,
     'rain': pops === 'Rain',
-    'clear': pops === 'Clear',
+    'clearDay': pops === 'Clear' && dayTime,
+    'clearNight': pops === 'Clear' && nightTime,
     'clouds': pops === 'Clouds',
     'mist': pops === 'Mist',
   });

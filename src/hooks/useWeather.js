@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import {getCityName, getWeather} from '../api/api';
-import {timeStampConverter} from '../helpers/helper';
+import {timeStampConverter, timeStampToHours} from '../helpers/helper';
 
 export default function useWeather() {
   const [loading, setLoading] = useState(false);
@@ -19,6 +19,7 @@ export default function useWeather() {
     feelsLike: '',
     sunrise: '',
     sunset: '',
+    dt: 0
   });
 
   const [hourlyWeather, setHourlyWeather] = useState([]);
@@ -79,6 +80,7 @@ export default function useWeather() {
           {
             ...prevState,
             temperature: responseData.temp.toFixed(1),
+            dt: timeStampToHours(responseData.dt),
             UVI: responseData.uvi,
             feelsLike: responseData.feels_like.toFixed(1),
             humidity: responseData.humidity,
