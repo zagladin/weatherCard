@@ -1,14 +1,17 @@
 import axios from 'axios';
 
-const APIKey = process.env.REACT_APP_API_KEY;
+const ENDPOINT = 'https://serene-beyond-92116.herokuapp.com';
+// const ENDPOINT = 'http://localhost:5005';
 
 export const getWeather = async (lat, long) => {
-  const url = 'https://api.openweathermap.org/data/2.5/onecall';
-  let endpoint =
-      `${url}?lat=${lat}&lon=${long}&exclude=minutely,daily,alerts&units=metric&appid=${APIKey}`;
+  const url = `${ENDPOINT}/get-weather`;
+  const data = {
+    latitude: lat,
+    longitude: long,
+  };
 
   try {
-    const weatherData = await axios.get(endpoint);
+    const weatherData = await axios.post(url, data);
     if (weatherData) {
       return weatherData.data;
     }
@@ -18,11 +21,14 @@ export const getWeather = async (lat, long) => {
 };
 
 export const getCityName = async (lat, long) => {
-  const url = 'https://api.openweathermap.org/geo/1.0/reverse';
-  const endpoint = `${url}?lat=${lat}&lon=${long}&limit=1&appId=${APIKey}`;
+  const url = `${ENDPOINT}/get-city`;
+  const data = {
+    latitude: lat,
+    longitude: long,
+  };
 
   try {
-    const response = await axios.get(endpoint);
+    const response = await axios.post(url, data);
 
     if (response) {
       return response.data;
