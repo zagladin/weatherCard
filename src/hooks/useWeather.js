@@ -1,6 +1,5 @@
 import {useState} from 'react';
 import {getCityName, getWeather} from '../api/api';
-import {timeStampConverter, timeStampToHours} from '../helpers/helper';
 
 export default function useWeather() {
   const [loading, setLoading] = useState(false);
@@ -73,14 +72,11 @@ export default function useWeather() {
       const pressureToMmHG = responseData.pressure * 0.75;
       const popsValue = responseData.weather[0].main;
 
-      const sunriseValue = timeStampConverter(responseData.sunrise);
-      const sunsetValue = timeStampConverter(responseData.sunset);
-
       setCurrentWeather(prevState => (
           {
             ...prevState,
             temperature: responseData.temp.toFixed(1),
-            dt: timeStampToHours(responseData.dt),
+            dt: responseData.dt,
             UVI: responseData.uvi,
             feelsLike: responseData.feels_like.toFixed(1),
             humidity: responseData.humidity,
@@ -89,8 +85,8 @@ export default function useWeather() {
             wind: responseData.wind_speed,
             windAngle: responseData.wind_deg,
             icon: iconUrl,
-            sunrise: sunriseValue,
-            sunset: sunsetValue,
+            sunrise: responseData.sunrise,
+            sunset: responseData.sunset,
           }));
 
       setHourlyWeather(res.hourly.slice(0, 12));

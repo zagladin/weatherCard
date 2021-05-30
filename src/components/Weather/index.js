@@ -13,6 +13,7 @@ import Sunset from '../Icons/Sunset/Sunset';
 import UV from '../Icons/UV/UV';
 import HourlyForecastRenderer
   from '../HourlyCardsRenderer/HourlyForecastRenderer';
+import {timeStampConverter} from '../../helpers/helper';
 
 const Weather = () => {
 
@@ -41,18 +42,21 @@ const Weather = () => {
 
   const cx = className.bind(styles);
 
-  const dayTime = 21 > dt > 9;
-  const nightTime = dt > 21 || 9 > dt > 0;
+  const dayTime = sunset > dt && dt > sunrise;
 
+  const sunriseValue = timeStampConverter(sunrise);
+  const sunsetValue = timeStampConverter(sunset);
 
   const weatherCardStyles = cx({
     'imageWeather': true,
     'rain': pops === 'Rain',
     'clearDay': pops === 'Clear' && dayTime,
-    'clearNight': pops === 'Clear' && nightTime,
+    'clearNight': pops === 'Clear',
     'clouds': pops === 'Clouds',
     'mist': pops === 'Mist',
   });
+
+  const uvText = 'Ultraviolet index. If more than 3 - could be risky for skin';
 
   return (
       <div className={styles.wrapper}>
@@ -66,14 +70,14 @@ const Weather = () => {
           </span>
             </div>
             <div className={styles.city}>
-              <GeoPointIcon/><span>{cityName}</span> (~{accuracy} m.)
+              <GeoPointIcon/><span> {cityName} </span> (~{accuracy} m.)
             </div>
             <div className={styles.optional}>
               <div className={styles.value}>
-                <Sunrise/> <span>{sunrise}</span>
+                <Sunrise/> <span>{sunriseValue}</span>
               </div>
               <div className={styles.value}>
-                <Sunset/> <span>{sunset}</span>
+                <Sunset/> <span>{sunsetValue}</span>
               </div>
             </div>
             <div className={styles.iconAndState}>
@@ -84,7 +88,11 @@ const Weather = () => {
                 {pops}
               </div>
               <UV/>
-              <div className={styles.pops}>{UVI}</div>
+              <div className={styles.pops}>
+                <abbr title={uvText}>
+                  {UVI}
+                </abbr>
+              </div>
             </div>
 
             {loading ? <Loader/> : (

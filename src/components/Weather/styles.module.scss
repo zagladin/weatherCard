@@ -78,6 +78,12 @@
 .pops {
   font-size: 30px;
 
+  abbr {
+    text-decoration: none;
+    cursor: default;
+
+  }
+
   &:last-child {
     font-size: 38px;
   }
