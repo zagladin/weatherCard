@@ -13,7 +13,7 @@ import Sunset from '../Icons/Sunset/Sunset';
 import UV from '../Icons/UV/UV';
 import HourlyForecastRenderer
   from '../HourlyCardsRenderer/HourlyForecastRenderer';
-import {timeStampConverter} from '../../helpers/helper';
+import {timeStampConverter, timeStampToHours} from '../../helpers/helper';
 
 const Weather = () => {
 
@@ -42,7 +42,10 @@ const Weather = () => {
 
   const cx = className.bind(styles);
 
-  const dayTime = sunset > dt && dt > sunrise;
+  const dayTime =
+      timeStampToHours(sunset) > timeStampToHours(dt)
+      &&
+      timeStampToHours(dt) > timeStampToHours(sunrise);
 
   const sunriseValue = timeStampConverter(sunrise);
   const sunsetValue = timeStampConverter(sunset);
@@ -62,13 +65,13 @@ const Weather = () => {
       <div className={styles.wrapper}>
         <div className={weatherCardStyles}>
           <div className={styles.content}>
-            <div className={styles.temperature}>
-              <span className={styles.tempValue}>{temperature}</span>
-              <span className={styles.tempText}>feels like</span>
-              <span className={styles.tempValue}>
-            {feelsLike}
-          </span>
-            </div>
+            {temperature && (
+                <div className={styles.temperature}>
+                  <span className={styles.tempValue}>{temperature}</span>
+                  <span className={styles.tempText}>feels like</span>
+                  <span className={styles.tempValue}>{feelsLike}</span>
+                </div>
+            )}
             <div className={styles.city}>
               <GeoPointIcon/><span> {cityName} </span> (~{accuracy} m.)
             </div>
