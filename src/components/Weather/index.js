@@ -53,8 +53,8 @@ const Weather = () => {
   const weatherCardStyles = cx({
     'imageWeather': true,
     'rain': pops === 'Rain',
-    'clearDay': pops === 'Clear' && dayTime,
-    'clearNight': pops === 'Clear',
+    'clearDay': dayTime && pops === 'Clear',
+    'clearNight': !dayTime && pops === 'Clear',
     'clouds': pops === 'Clouds',
     'mist': pops === 'Mist',
   });
