@@ -1,24 +1,22 @@
 {
   "files": {
-    "main.css": "/weatherCard/static/css/main.31f3cbdf.chunk.css",
-    "main.js": "/weatherCard/static/js/main.d25fa980.chunk.js",
-    "main.js.map": "/weatherCard/static/js/main.d25fa980.chunk.js.map",
-    "runtime-main.js": "/weatherCard/static/js/runtime-main.0405df61.js",
-    "runtime-main.js.map": "/weatherCard/static/js/runtime-main.0405df61.js.map",
-    "static/js/2.76b126af.chunk.js": "/weatherCard/static/js/2.76b126af.chunk.js",
-    "static/js/2.76b126af.chunk.js.map": "/weatherCard/static/js/2.76b126af.chunk.js.map",
+    "main.css": "/weatherCard/static/css/main.38b3343f.chunk.css",
+    "main.js": "/weatherCard/static/js/main.92e1d30b.chunk.js",
+    "main.js.map": "/weatherCard/static/js/main.92e1d30b.chunk.js.map",
+    "runtime-main.js": "/weatherCard/static/js/runtime-main.96c0264c.js",
+    "runtime-main.js.map": "/weatherCard/static/js/runtime-main.96c0264c.js.map",
+    "static/js/2.f6d2be3a.chunk.js": "/weatherCard/static/js/2.f6d2be3a.chunk.js",
+    "static/js/2.f6d2be3a.chunk.js.map": "/weatherCard/static/js/2.f6d2be3a.chunk.js.map",
     "index.html": "/weatherCard/index.html",
-    "precache-manifest.fe0a5e658a21390c1fb0f26dffb33269.js": "/weatherCard/precache-manifest.fe0a5e658a21390c1fb0f26dffb33269.js",
-    "service-worker.js": "/weatherCard/service-worker.js",
-    "static/css/main.31f3cbdf.chunk.css.map": "/weatherCard/static/css/main.31f3cbdf.chunk.css.map",
-    "static/js/2.76b126af.chunk.js.LICENSE.txt": "/weatherCard/static/js/2.76b126af.chunk.js.LICENSE.txt",
-    "static/media/Bars.svg": "/weatherCard/static/media/Bars.2fc9d01e.svg",
-    "static/media/styles.module.scss": "/weatherCard/static/media/rain.afab566e.webp"
+    "static/css/main.38b3343f.chunk.css.map": "/weatherCard/static/css/main.38b3343f.chunk.css.map",
+    "static/js/2.f6d2be3a.chunk.js.LICENSE.txt": "/weatherCard/static/js/2.f6d2be3a.chunk.js.LICENSE.txt",
+    "static/media/Bars.9d2d0fb8.svg": "/weatherCard/static/media/Bars.9d2d0fb8.svg",
+    "static/media/styles.module.scss": "/weatherCard/static/media/rain.825252d2.webp"
   },
   "entrypoints": [
-    "static/js/runtime-main.0405df61.js",
-    "static/js/2.76b126af.chunk.js",
-    "static/css/main.31f3cbdf.chunk.css",
-    "static/js/main.d25fa980.chunk.js"
+    "static/js/runtime-main.96c0264c.js",
+    "static/js/2.f6d2be3a.chunk.js",
+    "static/css/main.38b3343f.chunk.css",
+    "static/js/main.92e1d30b.chunk.js"
   ]
 }
