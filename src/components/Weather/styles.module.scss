@@ -9,7 +9,7 @@
   max-width: 640px;
   height: 640px;
   padding: 36px;
-  margin: 10% auto;
+  margin: 10% auto 0 auto;
 
   @include mobile {
     margin: unset;
