@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useCallback} from 'react';
 
 import styles from './Wrapper.module.scss';
 
@@ -7,23 +7,13 @@ import Weather from '../Weather';
 
 const Wrapper = () => {
 
-  const [background, setBackground] = useState('#FFF');
+  const color = window.localStorage.getItem('color');
+  const [background, setBackground] = useState(color || '#FFF');
 
-  useEffect(() => {
-    const color = window.localStorage.getItem('color');
-    if (color) {
-      setBackground(color);
-    }
-    else {
-      setBackground('#FFF');
-    }
-  }, []);
-
-  const handleColorChanging = (colorValue) => {
+  const handleColorChanging = useCallback((colorValue) => {
     window.localStorage.setItem('color', colorValue);
     setBackground(colorValue);
-  }
-
+  }, []);
 
   return (
       <div className={styles.background}
@@ -34,4 +24,4 @@ const Wrapper = () => {
   );
 };
 
-export default Wrapper;
+export default React.memo(Wrapper);

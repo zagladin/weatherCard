@@ -89,7 +89,7 @@ export default function useWeather() {
             sunset: responseData.sunset,
           }));
 
-      setHourlyWeather(res.hourly.slice(0, 12));
+      setHourlyWeather(res.hourly.slice(0, 6));
     }).catch(error => console.error(error)).finally(() => setLoading(false));
   };
 

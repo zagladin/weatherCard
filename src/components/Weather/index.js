@@ -14,6 +14,7 @@ import UV from '../Icons/UV/UV';
 import HourlyForecastRenderer
   from '../HourlyCardsRenderer/HourlyForecastRenderer';
 import {timeStampConverter, timeStampToHours} from '../../helpers/helper';
+import WeatherElement from '../WeatherElement/WeatherElement';
 
 const Weather = () => {
 
@@ -42,6 +43,15 @@ const Weather = () => {
 
   const cx = className.bind(styles);
 
+  const dateInfo = new Date();
+  const currentDate = dateInfo.toLocaleDateString('en-GB', {
+    year: 'numeric', month: 'short', day: 'numeric',
+  });
+
+  const currentTime = dateInfo.toLocaleTimeString('en-GB', {
+    hour: '2-digit', minute: '2-digit',
+  });
+
   const dayTime =
       timeStampToHours(sunset) > timeStampToHours(dt)
       &&
@@ -62,63 +72,71 @@ const Weather = () => {
   const uvText = 'Ultraviolet index. If more than 3 - could be risky for skin';
 
   return (
-      <div className={styles.wrapper}>
-        <div className={weatherCardStyles}>
-          <div className={styles.content}>
+
+      <div className={styles.weatherWrapper}>
+        {/*<img className={styles.imageWeather} src={rainImg} />*/}
+        <div className={styles.weatherContent}>
+          <div className={styles.leftSide}>
             {temperature && (
                 <div className={styles.temperature}>
-                  <span className={styles.tempValue}>{temperature}</span>
-                  <span className={styles.tempText}>feels like</span>
-                  <span className={styles.tempValue}>{feelsLike}</span>
+                  <span>{`${temperature}`}</span>
+                  <sup>°</sup>
                 </div>
             )}
-            <div className={styles.city}>
-              <GeoPointIcon/><span> {cityName} </span> (~{accuracy} m.)
-            </div>
-            <div className={styles.optional}>
-              <div className={styles.value}>
-                <Sunrise/> <span>{sunriseValue}</span>
-              </div>
-              <div className={styles.value}>
-                <Sunset/> <span>{sunsetValue}</span>
-              </div>
-            </div>
-            <div className={styles.iconAndState}>
-              <div className={styles.icon}>
-                {icon ? <img src={icon} alt="weather icon"/> : '🙄'}
-              </div>
-              <div className={styles.pops}>
-                {pops}
-              </div>
-              <UV/>
-              <div className={styles.pops}>
-                <abbr title={uvText}>
-                  {UVI}
-                </abbr>
-              </div>
-            </div>
 
-            {loading ? <Loader/> : (
-                <div className={styles.optional}>
-                  <div className={styles.value}>
-                    <Humidity/> <span>{humidity}</span>%
-                  </div>
-                  <div className={styles.value}>
-                    <Pressure/><span>{pressure}</span>
-                  </div>
-                  <div className={styles.value}>
-                    <Wind/><span>{wind}</span>m/s
-                  </div>
-                </div>
-            )}
-            <div className={styles.hourlyForecast}>
-              <HourlyForecastRenderer forecast={hourlyWeather}/>
+            <WeatherElement name={currentDate} value={currentTime}/>
+            <WeatherElement name={'Sunrise'} value={sunriseValue}/>
+            <WeatherElement name={'Sunset'} value={sunsetValue}/>
+          </div>
+
+          <div className={styles.rightSide}>
+            <div className={styles.rightSideTop}>
+             <span>
+              {cityName}
+            </span>
+              <span>
+              {`accuracy ~ ${accuracy} m.`}
+            </span>
+            </div>
+            <div className={styles.rightSideBottom}>
+              {/*<WeatherElement name={'Pops'} value={pops} nameSize={27}/>*/}
+              <WeatherElement
+                  name={'Pressure'}
+                  value={pressure}
+                  suffix={'mmPa'}
+                  nameSize={24}
+              />
+              <WeatherElement
+                  name={'Humidity'}
+                  value={humidity}
+                  suffix={'%'}
+                  nameSize={24}
+              />
+              <WeatherElement
+                  name={'UV index'}
+                  value={UVI}
+                  nameSize={24}
+              />
+              <WeatherElement
+                  name={'Wind'}
+                  value={wind}
+                  suffix={'m/s'}
+                  nameSize={24}
+              />
             </div>
           </div>
         </div>
+
+
+        <div className={styles.hourlyForecast}>
+          <HourlyForecastRenderer forecast={hourlyWeather}/>
+        </div>
+
+
+
       </div>
+
   );
 };
 
 export default React.memo(Weather);
-

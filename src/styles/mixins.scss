@@ -1,0 +1,25 @@
+$mobile: 850px;
+
+@mixin comforta($weight) {
+  font-family: Comfortaa, cursive;
+  font-weight: $weight;
+  color: var(--white-color);
+}
+
+@mixin montserrat($weight) {
+  font-family: Montserrat, sans-serif;
+  font-weight: $weight;
+  color: var(--white-color);
+}
+
+@mixin bebas($weight) {
+  font-family: Bebas Neue, cursive;
+  font-weight: $weight;
+  color: var(--white-color);
+}
+
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content
+  }
+}

@@ -7,8 +7,7 @@ const HourlyWeatherCard = (
     {
       dateTime,
       temperature,
-      feelsTemp,
-        icon,
+      icon,
       pops,
       uvindex,
       wind,
@@ -19,16 +18,12 @@ const HourlyWeatherCard = (
           <div className={styles.temperature}>
             {temperature}
           </div>
-          <div className={styles.temperature}>
-            {feelsTemp}
-          </div>
         </div>
-
         <div className={styles.uvindex}>
           UV {uvindex}
         </div>
         <div className={styles.pops}>
-          <img src={icon} alt='{weather icon}'/>{pops}
+          <img src={icon} alt="{weather icon}"/>{pops}
         </div>
         <div className={styles.wind}>
           <Wind width={24} height={24}/>{wind} m/s

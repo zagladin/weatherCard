@@ -1,0 +1,33 @@
+@import './src/styles/mixins';
+
+.weatherElement {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+  @include bebas(500);
+  min-width: 120px;
+
+  & > div {
+    span {
+      font-size: 15px;
+      margin-left: 2px;
+    }
+  }
+
+  & > div:first-child {
+    margin-bottom: -14px;
+    font-size: 32px;
+
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  & > div:last-child {
+    font-size: 40px;
+  }
+
+  @include mobile {
+    margin-bottom: 0;
+  }
+}
