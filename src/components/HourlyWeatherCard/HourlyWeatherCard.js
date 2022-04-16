@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './styles.module.scss';
 import { timeStampConverter } from '../../helpers/helper';
 import Wind from '../Icons/Wind/Wind';
@@ -40,6 +41,13 @@ const HourlyWeatherCard = (
   </div>
 );
 
-HourlyWeatherCard.propTypes = {};
+HourlyWeatherCard.propTypes = {
+  dateTime: PropTypes.number.isRequired,
+  temperature: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+  pops: PropTypes.string.isRequired,
+  uvindex: PropTypes.number.isRequired,
+  wind: PropTypes.number.isRequired,
+};
 
 export default React.memo(HourlyWeatherCard);

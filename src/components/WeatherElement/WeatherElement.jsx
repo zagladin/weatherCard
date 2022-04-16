@@ -16,7 +16,7 @@ const WeatherElement = (
     <div style={{ fontSize: `${valueSize}px` }}>
       {value}
       {suffix && (
-      <span>{suffix}</span>
+        <span>{suffix}</span>
       )}
     </div>
   </div>
@@ -30,7 +30,7 @@ WeatherElement.defaultProps = {
 
 WeatherElement.propTypes = {
   name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   suffix: PropTypes.string,
   nameSize: PropTypes.number,
   valueSize: PropTypes.number,

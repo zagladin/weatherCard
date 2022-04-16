@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 const ENDPOINT = 'https://serene-beyond-92116.herokuapp.com';
-// const ENDPOINT = 'http://localhost:5005';
 
 export const getWeather = async (lat, long) => {
   const url = `${ENDPOINT}/get-weather`;

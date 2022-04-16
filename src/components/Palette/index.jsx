@@ -1,12 +1,16 @@
-import React, {useState} from 'react';
+import React, { useMemo, useState } from 'react';
+import PropTypes from 'prop-types';
+import className from 'classnames/bind';
 import styles from './styles.module.scss';
-import useWeather from '../../hooks/useWeather';
 
-const Palette = ({changeColor}) => {
-
+const Palette = (
+  {
+    changeColor,
+  },
+) => {
   const [showPalette, setShowpalette] = useState(false);
 
-  const colors = [
+  const colors = useMemo(() => [
     '#000000',
     '#ff0000',
     '#001f3f',
@@ -56,61 +60,49 @@ const Palette = ({changeColor}) => {
     '#123C69',
     '#2C3531',
     '#116466',
-  ];
+  ], []);
 
-  // const toggleFullScreen = () => {
-  //     if (!document.fullscreenElement) {
-  //         document.documentElement.requestFullscreen();
-  //     } else {
-  //         if (document.exitFullscreen) {
-  //             document.exitFullscreen();
-  //         }
-  //     }
-  // };
+  const cx = className.bind(styles);
 
-  // const {getLocation} = useWeather();
+  const paletteStyles = cx({
+    palette: true,
+    visible: showPalette,
+  });
 
-  const togglePalette = () => setShowpalette(prevState => !prevState);
+  const togglePalette = () => setShowpalette((prevState) => !prevState);
 
-  const renderPalette = () => colors.map(color =>
-      <div key={color}
-           className={styles.colorBlock}
-           style={{'background': color}}
-           onClick={() => changeColor(color)}>
-      </div>,
-  );
+  const renderPalette = () => colors.map((color) => (
+    <div
+      key={color}
+      className={styles.colorBlock}
+      style={{ background: color }}
+      onClick={() => changeColor(color)}
+    />
+  ));
 
   return (
-      <div className={styles.colorChanger}>
-                    <span role="img"
-                          aria-label="palette"
-                          title="Change color"
-                          onClick={togglePalette}>
-                            🎨
-                    </span>
-        {/*<span role="img"*/}
-        {/*      aria-label="fullscreen"*/}
-        {/*      title="Fullscreen"*/}
-        {/*      onClick={toggleFullScreen}>*/}
-        {/*          👁️*/}
-        {/*      </span>*/}
-        {/*<span role="img"*/}
-        {/*      aria-label="Refresh data"*/}
-        {/*      title="Refresh data"*/}
-        {/*      onClick={getLocation}*/}
-        {/*>*/}
-        {/*    🔄*/}
-        {/*</span>*/}
-        <div className={showPalette ?
-            `${styles.palette} ${styles.visible}` :
-            `${styles.palette}`} id="palette">
-          <div className={styles.wrapper}>
-            {renderPalette()}
-          </div>
-          <div className={styles.pointer}/>
+    <div className={styles.colorChanger}>
+      <span
+        role="img"
+        aria-label="palette"
+        title="Change color"
+        onClick={togglePalette}
+      >
+        🎨
+      </span>
+      <div
+        className={paletteStyles}
+      >
+        <div className={styles.wrapper}>
+          {renderPalette()}
         </div>
+        <div className={styles.pointer} />
       </div>
+    </div>
   );
-
 };
-export default Palette;
+
+Palette.propTypes = {
+  changeColor: PropTypes.func.isRequired,
+};
+export default React.memo(Palette);
