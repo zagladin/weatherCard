@@ -1,20 +1,24 @@
 {
   "files": {
     "main.css": "/weatherCard/static/css/main.6eb00e1e.chunk.css",
-    "main.js": "/weatherCard/static/js/main.2aa23063.chunk.js",
-    "main.js.map": "/weatherCard/static/js/main.2aa23063.chunk.js.map",
-    "runtime-main.js": "/weatherCard/static/js/runtime-main.96c0264c.js",
-    "runtime-main.js.map": "/weatherCard/static/js/runtime-main.96c0264c.js.map",
+    "main.js": "/weatherCard/static/js/main.31062746.chunk.js",
+    "main.js.map": "/weatherCard/static/js/main.31062746.chunk.js.map",
+    "runtime-main.js": "/weatherCard/static/js/runtime-main.1c52757c.js",
+    "runtime-main.js.map": "/weatherCard/static/js/runtime-main.1c52757c.js.map",
     "static/js/2.08ba0cf9.chunk.js": "/weatherCard/static/js/2.08ba0cf9.chunk.js",
     "static/js/2.08ba0cf9.chunk.js.map": "/weatherCard/static/js/2.08ba0cf9.chunk.js.map",
+    "static/js/3.90d24cee.chunk.js": "/weatherCard/static/js/3.90d24cee.chunk.js",
+    "static/js/3.90d24cee.chunk.js.map": "/weatherCard/static/js/3.90d24cee.chunk.js.map",
     "index.html": "/weatherCard/index.html",
+    "service-worker.js": "/weatherCard/service-worker.js",
+    "service-worker.js.map": "/weatherCard/service-worker.js.map",
     "static/css/main.6eb00e1e.chunk.css.map": "/weatherCard/static/css/main.6eb00e1e.chunk.css.map",
     "static/js/2.08ba0cf9.chunk.js.LICENSE.txt": "/weatherCard/static/js/2.08ba0cf9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.96c0264c.js",
+    "static/js/runtime-main.1c52757c.js",
     "static/js/2.08ba0cf9.chunk.js",
     "static/css/main.6eb00e1e.chunk.css",
-    "static/js/main.2aa23063.chunk.js"
+    "static/js/main.31062746.chunk.js"
   ]
 }
