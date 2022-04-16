@@ -1,5 +1,56 @@
-.spinner {
-  width: 50px;
-  height: 50px;
+@import './src/styles/mixins';
+
+.loaderWrapper {
+  width: 100%;
   display: inline-block;
+  margin-top: 24px;
+}
+
+.loading {
+  @include montserrat(700);
+  font-size: 24px;
+
+  @include mobile {
+    font-size: 18px;
+  }
+
+  & > span:not(:first-child) {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    margin: 12px 5px 0 5px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 100%;
+    animation: scaleUpDown 1.8s ease-in-out infinite;
+
+    &.dot1 {
+      animation-delay: 0.3s;
+    }
+
+    &.dot2 {
+      animation-delay: 0.6s;
+    }
+
+    &.dot3 {
+      animation-delay: 0.9s;
+    }
+  }
+}
+
+@keyframes scaleUpDown {
+  0% {
+    transform: scale(1)
+  }
+  25% {
+    transform: scale(1.2)
+  }
+  50% {
+    transform: scale(1.4)
+  }
+  75% {
+    transform: scale(1.2)
+  }
+  100% {
+    transform: scale(1)
+  }
 }

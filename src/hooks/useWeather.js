@@ -90,7 +90,9 @@ export default function useWeather() {
           }));
 
       setHourlyWeather(res.hourly.slice(0, 6));
-    }).catch(error => console.error(error)).finally(() => setLoading(false));
+    })
+    .catch(error => console.error(error))
+    .finally(() => setLoading(false));
   };
 
   return {

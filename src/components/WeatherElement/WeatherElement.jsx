@@ -1,28 +1,26 @@
 import React from 'react';
-import styles from './WeatherElement.module.scss';
 import PropTypes from 'prop-types';
+import styles from './WeatherElement.module.scss';
 
 const WeatherElement = (
-    {
-      name,
-      value,
-      suffix,
-      nameSize,
-      valueSize,
-    },
-) => {
-  return (
-      <div className={styles.weatherElement}>
-        <div style={{fontSize: `${nameSize}px`}}>{name}</div>
-        <div style={{fontSize: `${valueSize}px`}}>
-          {value}
-          {suffix && (
-              <span>{suffix}</span>
-          )}
-        </div>
-      </div>
-  );
-};
+  {
+    name,
+    value,
+    suffix,
+    nameSize,
+    valueSize,
+  },
+) => (
+  <div className={styles.weatherElement}>
+    <div style={{ fontSize: `${nameSize}px` }}>{name}</div>
+    <div style={{ fontSize: `${valueSize}px` }}>
+      {value}
+      {suffix && (
+      <span>{suffix}</span>
+      )}
+    </div>
+  </div>
+);
 
 WeatherElement.defaultProps = {
   suffix: null,
